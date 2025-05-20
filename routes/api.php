@@ -4,7 +4,7 @@
 use App\Http\Controllers\Api\Evaluation\EvaluationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/evaluations/{company}',[EvaluationController::class,'index']);
+Route::get('/evaluations',[EvaluationController::class,'index']);
 Route::post('/evaluations/{company}',[EvaluationController::class,'store']);
 
 Route::get('/', function () {

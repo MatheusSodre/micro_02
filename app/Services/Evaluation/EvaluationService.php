@@ -20,8 +20,11 @@ class EvaluationService
     {
         //
     }
+    public function paginate()
+    {
+        return $this->evaluationRepository->paginate();
+    }
 
-    
     public function getEvaluationCompany(string $company)
     {
         return $this->evaluationRepository->getEvaluationCompany($company);
@@ -30,7 +33,7 @@ class EvaluationService
     public function store(array $data,$company)
     {
         $response = $this->companyService->getCompany($company);
-        
+
         return $this->evaluationRepository->create($data);
     }
 

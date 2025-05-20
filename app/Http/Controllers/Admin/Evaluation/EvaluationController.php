@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Evaluation;
+namespace App\Http\Controllers\Admin\Evaluation;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Evaluation\StoreEvaluation;
@@ -25,8 +25,8 @@ class EvaluationController extends Controller
      */
     public function index()
     {
-       return EvaluationResource::collection($this->evaluationService->paginate());
-
+        $reponse = $this->evaluationService->paginate();
+        return view('admin.evaluation.index', compact('reponse' ));
     }
 
     /**
