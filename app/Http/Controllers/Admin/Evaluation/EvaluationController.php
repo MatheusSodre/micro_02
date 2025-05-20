@@ -27,6 +27,7 @@ class EvaluationController extends Controller
     {
         $reponse = $this->evaluationService->paginate();
         return view('admin.evaluation.index', compact('reponse' ));
+        // return view('admin.evaluation.indexlte', compact('reponse' ));
     }
 
     /**
